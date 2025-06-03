@@ -43,6 +43,13 @@ rem ------- google end -----------
 echo 全てのIPアドレスを登録しました。
 pause
 
+rem ------- Windows Update（svchost）の許可
+
+rem svchostをWindowsファイヤーウォールで許可
+echo svchostをWindowsファイヤーウォールで許可します
+netsh advfirewall firewall add rule name="allow_svchost" dir=out action=allow program="%SystemRoot%\System32\svchost.exe" enable=yes
+
+
 @rem 本バッチファイルはMITライセンスで提供されます
 @rem CaseNo.5 | MIT License | https://caseno5.hatenablog.com/ | https://github.com/caseno5/
 @rem 
